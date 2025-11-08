@@ -63,3 +63,7 @@ docker-compose up -d
 ## Single-threaded scheduled checks
 - Pros: Predictable, avoids concurrency issues, simple to test.
 - Cons: Not ideal for monitoring many services or high-latency endpoints; asynchronous or parallel checks could improve performance.
+
+## Local saving instead of DB commit
+- Pros: Easy to implement, logs are on container itself
+- Cons: Lose these files when container goes down, does not save to db.
