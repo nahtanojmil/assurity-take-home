@@ -1,0 +1,21 @@
+server:
+  port: 9085
+
+spring:
+  security:
+    user:
+      name: user
+      password: s3creTpW!
+
+check:
+  interval-ms: 30000
+  output-dir: /app/output
+  file-date-formatter: ddMMyyyyHHmm
+
+services:
+  - name: user-service
+    url: http://localhost:8081/actuator/health
+    expectedVersion: 1.0.0
+  - name: order-service
+    url: http://localhost:8082/actuator/health
+    expectedVersion: 2.1.3

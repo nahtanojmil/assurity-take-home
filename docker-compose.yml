@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  health-monitor:
+    build: .
+    container_name: health-monitor
+    ports:
+      - "9085:9085"
+    volumes:
+      - ./data:/app/output
+    env_file:
+      - .env
